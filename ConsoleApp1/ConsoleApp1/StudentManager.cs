@@ -29,7 +29,7 @@ internal static class StudentManager
         });
 
 
-        Console.WriteLine("Student added successfully!");
+        Console.WriteLine("\nStudent added successfully!");
     }
 
 
