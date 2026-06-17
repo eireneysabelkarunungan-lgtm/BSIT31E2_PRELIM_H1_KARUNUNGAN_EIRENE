@@ -56,3 +56,10 @@ CodeCoverage/
 TestResult.xml
 nunit-*.xml
 /.idea/
+
+# Visual Studio cache and temporary files
+.vs/
+[Bb]in/
+[Oo]bj/
+*.user
+*.suo
