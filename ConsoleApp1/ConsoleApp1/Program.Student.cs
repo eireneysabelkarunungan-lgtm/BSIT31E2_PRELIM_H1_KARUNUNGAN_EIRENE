@@ -6,7 +6,7 @@
         double Grade2;
         double Grade3;
 
-        public Student(string name, double grade1, double grade2, double grade3)
+        public Student(string name, double grade1, double grade2, double  )
         {
             Name = name;
             Grade1 = grade1;

@@ -41,6 +41,10 @@ partial class Program
 
                         case 2:
                             StudentManager.ViewAllStudents();
+                            Console.WriteLine($"\nName: {student.GetName()}");
+                            Console.WriteLine($"Grades: {string.Join(",", student.GetGrades())}");
+                            Console.WriteLine($"Average: {average:F2}");
+                            Console.WriteLine("-------------------------");
                             break;
                         case 3:
                             StudentManager.ComputeAverageGrade();
