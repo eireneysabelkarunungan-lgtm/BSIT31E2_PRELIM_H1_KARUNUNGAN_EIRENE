@@ -1,6 +1,4 @@
-﻿
-
-class Program
+﻿class Program
 {
     
     static void Main()
@@ -45,18 +43,11 @@ class Program
                             break;
 
                         case 2:
-<
-                            StudentManager.ViewAllStudents();
-                            Console.WriteLine($"\nName: {student.GetName()}");
-                            Console.WriteLine($"Grades: {string.Join(",", student.GetGrades())}");
-                            Console.WriteLine($"Average: {average:F2}");
-                            Console.WriteLine("-------------------------");
-
 
                             if (students.Count == 0)
                             {
-                                Console.WriteLine("No students found.");
-                                return;
+                                Console.WriteLine("\nNo students found.");
+                                break;
                             }
 
                             foreach (Student student in students)
@@ -64,28 +55,41 @@ class Program
                                 double average = student.GetAverage();
 
                                 Console.WriteLine($"\nName: {student.GetName()}");
-                                Console.WriteLine($"Grades: {string.Join(",", student.GetGrades())}");
+                                Console.WriteLine($"Grades: {string.Join(", ", student.GetGrades())}");
                                 Console.WriteLine($"Average: {average:F2}");
                                 Console.WriteLine("-------------------------");
                             }
->>>>>>> 9fcb5b220ebab67115a4ac95b611309acba11a73
+
                             break;
                         case 3:
+
+                            if (students.Count == 0)
+                            {
+                                Console.WriteLine("\nNo students found.");
+                                break;
+                            }
+
                             Console.WriteLine("\n===== CLASS AVERAGE =====");
                             Console.WriteLine($"Overall Average Grade: {manager.ComputeAverage():F2}");
 
                             break;
                         case 4:
-                            Console.Write("Top Student(s): ");
+
+                            if (students.Count == 0)
+                            {
+                                Console.WriteLine("\nNo students found.");
+                                break;
+                            }
+
+                            Console.Write("\nTop Student: ");
                             Console.WriteLine(string.Join(", ",
                                 manager.GetHighest().Select(s => s.GetName())));
-                            foreach (var s in manager.GetStudents())
-                            {
-                                Console.WriteLine(
-                                    $"{s.GetName()} | G1={s.GetGrades()[0]} | G2={s.GetGrades()[1]} | G3={s.GetGrades()[2]} | Highest={s.GetHighestGrade()}");
-                            }
+
                             Console.Write("Highest Grade: ");
                             Console.WriteLine(manager.GetHighest()[0].GetHighestGrade());
+
+                            break;
+
                             //Console.WriteLine("\n===== HIGHEST GRADE =====");
                             //Console.Write("Top Student: ");
                             //foreach (var s in manager.GetHighest())
