@@ -1,10 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 
-partial class Program
+class Program
 {
+    
     static void Main()
     {
+        StudentManager manager = new StudentManager();
+        var students = manager.GetStudents();
             while (true)
             {
                 Console.WriteLine("\n===== STUDENT SYSTEM =====");
@@ -36,21 +39,57 @@ partial class Program
                             Console.Write("Enter grade 3: ");
                             double grade3 = Convert.ToDouble(Console.ReadLine());
 
-                            StudentManager.AddStudent(name, grade1, grade2, grade3);
+                            students.Add(new Student(name, grade1, grade2, grade3));
+
+                            Console.WriteLine("\nStudent added successfully!");
+
                             break;
 
                         case 2:
+<<<<<<< HEAD
                             StudentManager.ViewAllStudents();
                             Console.WriteLine($"\nName: {student.GetName()}");
                             Console.WriteLine($"Grades: {string.Join(",", student.GetGrades())}");
                             Console.WriteLine($"Average: {average:F2}");
                             Console.WriteLine("-------------------------");
+=======
+
+                            if (students.Count == 0)
+                            {
+                                Console.WriteLine("No students found.");
+                                return;
+                            }
+
+                            foreach (Student student in students)
+                            {
+                                double average = student.GetAverage();
+
+                                Console.WriteLine($"\nName: {student.GetName()}");
+                                Console.WriteLine($"Grades: {string.Join(",", student.GetGrades())}");
+                                Console.WriteLine($"Average: {average:F2}");
+                                Console.WriteLine("-------------------------");
+                            }
+>>>>>>> 9fcb5b220ebab67115a4ac95b611309acba11a73
                             break;
                         case 3:
-                            StudentManager.ComputeAverageGrade();
+                            Console.WriteLine("\n===== CLASS AVERAGE =====");
+                            Console.WriteLine($"Overall Average Grade: {manager.ComputeAverage():F2}");
+
                             break;
                         case 4:
-                            StudentManager.FindHighestGrade();
+                            Console.WriteLine("\n===== HIGHEST GRADE =====");
+                            Console.Write("Top Student: ");
+                            foreach (var s in manager.GetHighest())
+                            {
+                                Console.WriteLine(string.Join(",", s.GetName()));
+                            }
+
+                            Console.Write("Highest Grade: ");
+                            foreach (var s in manager.GetHighest())
+                            {
+                                Console.WriteLine(s.GetAverage());
+                            }
+
                             break;
                         case 5:
                             Console.WriteLine("Exiting program...");

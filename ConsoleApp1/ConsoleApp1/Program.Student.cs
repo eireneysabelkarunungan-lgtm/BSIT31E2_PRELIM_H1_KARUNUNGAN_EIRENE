@@ -29,7 +29,7 @@
 
     public double GetAverage()
     {
-        return Grade1 + Grade2 + Grade3 / 3;
+        return (Grade1 + Grade2 + Grade3) / 3;
     }
 }
 
