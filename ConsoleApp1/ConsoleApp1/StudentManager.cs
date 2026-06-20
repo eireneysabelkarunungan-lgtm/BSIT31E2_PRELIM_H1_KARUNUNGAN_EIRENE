@@ -23,10 +23,10 @@
 
             foreach (Student student in students)
             {
-                double average = (student.Grade1 + student.Grade2 + student.Grade3) / 3;
+            double average = student.GetAverage();
 
-                Console.WriteLine($"\nName: {student.Name}");
-                Console.WriteLine($"Grades: {student.Grade1}, {student.Grade2}, {student.Grade3}");
+                Console.WriteLine($"\nName: {student.GetName()}");
+                Console.WriteLine($"Grades: {string.Join(",",student.GetGrades())}");
                 Console.WriteLine($"Average: {average:F2}");
                 Console.WriteLine("-------------------------");
             }
