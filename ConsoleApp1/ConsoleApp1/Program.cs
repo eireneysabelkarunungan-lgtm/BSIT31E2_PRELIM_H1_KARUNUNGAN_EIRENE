@@ -35,7 +35,7 @@ class Program
         }
     }
 
-    static class SelectionMenu
+    class SelectionMenu
     {
         public static int MainMenu()
         {
@@ -64,13 +64,13 @@ class Program
         }
     }
  
-    static class StudentManager
+    class StudentManager
     {
      private static List<Student> students = new List<Student>();
 
         public static void AddStudent()
         {
-            
+            Console.Clear();
 
             Console.Write("Enter student name: ");
             string name = Console.ReadLine();
@@ -91,7 +91,7 @@ class Program
 
         public static void ViewAllStudents()
         {
-           
+            Console.Clear();
 
             if (students.Count == 0)
             {
@@ -112,7 +112,7 @@ class Program
 
         public static void ComputeAverageGrade()
         {
-          
+            Console.Clear();
 
             if (students.Count == 0)
             {
