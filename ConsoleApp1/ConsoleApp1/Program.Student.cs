@@ -31,5 +31,9 @@
     {
         return (Grade1 + Grade2 + Grade3) / 3;
     }
+    public double GetHighestGrade()
+    {
+        return Math.Max(Grade1, Math.Max(Grade2, Grade3));
+    }
 }
 
