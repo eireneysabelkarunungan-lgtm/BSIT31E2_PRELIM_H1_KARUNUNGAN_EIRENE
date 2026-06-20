@@ -44,13 +44,20 @@ class StudentManager
     //    Console.WriteLine("\n===== CLASS AVERAGE =====");
     //    Console.WriteLine($"Overall Average Grade: {classAverage:F2}");
     //}
-
     public Student[] GetHighest()
     {
-       
-        var max = students.Max(x => x.GetAverage());
-        return students.Where(x => x.GetAverage() == max).ToArray();
+        var max = students.Max(x => x.GetHighestGrade());
+
+        return students
+            .Where(x => x.GetHighestGrade() == max)
+            .ToArray();
     }
+    //public Student[] GetHighest()
+    //{
+
+    //    var max = students.Max(x => x.GetAverage());
+    //    return students.Where(x => x.GetAverage() == max).ToArray();
+    //}
 
     //public double HighestGrade()
     //{

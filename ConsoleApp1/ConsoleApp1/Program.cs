@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿
 
 class Program
 {
@@ -46,13 +45,13 @@ class Program
                             break;
 
                         case 2:
-<<<<<<< HEAD
+<
                             StudentManager.ViewAllStudents();
                             Console.WriteLine($"\nName: {student.GetName()}");
                             Console.WriteLine($"Grades: {string.Join(",", student.GetGrades())}");
                             Console.WriteLine($"Average: {average:F2}");
                             Console.WriteLine("-------------------------");
-=======
+
 
                             if (students.Count == 0)
                             {
@@ -77,18 +76,28 @@ class Program
 
                             break;
                         case 4:
-                            Console.WriteLine("\n===== HIGHEST GRADE =====");
-                            Console.Write("Top Student: ");
-                            foreach (var s in manager.GetHighest())
+                            Console.Write("Top Student(s): ");
+                            Console.WriteLine(string.Join(", ",
+                                manager.GetHighest().Select(s => s.GetName())));
+                            foreach (var s in manager.GetStudents())
                             {
-                                Console.WriteLine(string.Join(",", s.GetName()));
+                                Console.WriteLine(
+                                    $"{s.GetName()} | G1={s.GetGrades()[0]} | G2={s.GetGrades()[1]} | G3={s.GetGrades()[2]} | Highest={s.GetHighestGrade()}");
                             }
-
                             Console.Write("Highest Grade: ");
-                            foreach (var s in manager.GetHighest())
-                            {
-                                Console.WriteLine(s.GetAverage());
-                            }
+                            Console.WriteLine(manager.GetHighest()[0].GetHighestGrade());
+                            //Console.WriteLine("\n===== HIGHEST GRADE =====");
+                            //Console.Write("Top Student: ");
+                            //foreach (var s in manager.GetHighest())
+                            //{
+                            //    Console.WriteLine(string.Join(",", s.GetName()));
+                            //}
+
+                            //Console.Write("Highest Grade: ");
+                            //foreach (var s in manager.GetHighest())
+                            //{
+                            //    Console.WriteLine(s.GetAverage());
+                            //}
 
                             break;
                         case 5:
