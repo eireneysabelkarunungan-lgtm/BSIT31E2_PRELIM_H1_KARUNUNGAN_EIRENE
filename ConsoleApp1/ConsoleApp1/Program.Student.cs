@@ -6,7 +6,7 @@
         double Grade2;
         double Grade3;
 
-        public Student(string name, double grade1, double grade2, double  )
+        public Student(string name, double grade1, double grade2, double  grade3)
         {
             Name = name;
             Grade1 = grade1;
@@ -22,7 +22,6 @@
 
     public double[] GetGrades()
     {
-
 
         return [Grade1, Grade2, Grade3];
     }
